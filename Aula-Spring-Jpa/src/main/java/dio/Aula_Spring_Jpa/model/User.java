@@ -3,17 +3,18 @@ package dio.Aula_Spring_Jpa.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "tab_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Integer id ;
-    @Column(length = 50 , nullable = false)
-    private String name ;
-    @Column(length = 50 , nullable = false)
-    private String username ;
-    @Column(length = 100 , nullable = false)
-    private String password ;
+    private Integer id;
+    @Column(length = 50, nullable = false)
+    private String name;
+    @Column(length = 20, nullable = false)
+    private String username;
+    @Column(length = 100, nullable = false)
+    private String password;
 
     public String getName() {
         return name;
@@ -35,8 +36,8 @@ public class User {
         return password;
     }
 
-    public void setPassword(String passsword) {
-        this.password = passsword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -45,7 +46,7 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
-                ", passsword='" + password + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
